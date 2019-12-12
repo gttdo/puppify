@@ -1,0 +1,155 @@
+html,
+body{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+#background{
+  background-color: #000;
+  background-image: url(../images/home-bckgrd.jpg);
+  background-position: center;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+#loginContainer * {
+  color: #fff;
+  font-family: "Helvetica Neue","Helvetica", "Arial", sans-serif;
+  font-weight: normal;
+  line-height: 1em;
+  box-sizing: border-box;
+}
+
+#loginContainer{
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  max-width: 1024px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #fff;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #fff;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    #fff;
+}
+
+#inputContainer{
+  width: 400px;
+  padding: 45px;
+  float: left;
+  border-right: 1px solid #999;
+}
+
+#inputContainer h2{
+  text-align: center;
+}
+
+#inputContainer input[type="text"],
+#inputContainer input[type="email"],
+#inputContainer input[type="password"]{
+  display: block;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  height: 27px;
+  line-height: 27px;
+  width: 100%;
+}
+
+#inputContainer label{
+  color: #a0a0a0;
+  font-size: 13px;
+  margin-top: 15px;
+  display: block;
+}
+
+#inputContainer button{
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 250px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 20px auto;
+  height: 41px;
+  width: 100%;
+}
+
+#inputContainer button:hover{
+  cursor: pointer;
+  background-color: #a0a0a0;
+  border: 2px solid #a0a0a0;
+  color: #fff;
+}
+.hasAccountText{
+  text-align: center;
+}
+.hasAccountText span{
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#registerForm,
+#loginForm{
+  display: none;
+}
+
+#loginText {
+  padding: 45px;
+  display: table-cell;
+}
+
+#loginText h1{
+  color: #07d159;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+#loginText h2{
+  margin: 35px 0;
+}
+
+#loginText ul{
+  padding: 0;
+}
+
+#loginText li{
+  font-size: 20px;
+  list-style-type: none;
+  padding: 10px;
+}
+
+.icons8-checkmark {
+display: inline-block;
+width: 24px;
+height: 24px;
+background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjQiIGhlaWdodD0iMjQiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9Im5vbnplcm8iPjwvcGF0aD48ZyBmaWxsPSIjMDdkMTU5IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xNjEuOTIxODgsMjUuMDgzMzNsLTEwNC4xNDA2MiwxMDUuMjYwNDJsLTQ3LjcwMzEyLC00Ny40NzkxN2wtMTAuMDc4MTIsMTAuMzAyMDhsNTcuNzgxMjUsNTcuMzMzMzNsMTE0LjIxODc1LC0xMTUuMTE0NTh6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4=') 50% 50% no-repeat;
+background-size: 100%;
+}
+
+#inputContainer .errorMessage{
+  color: #07d159;
+  font-size: 18px;
+  display: block;
+}

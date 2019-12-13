@@ -121,7 +121,7 @@
           <ul>
             <li><i class="icons8-checkmark"></i> Discover music that your pooch will fall in love with</li>
             <li><i class="icons8-checkmark"></i> Create a soothing playlist for your pup</li>
-            <li><i class="icons8-checkmark"></i> Follow artist to keep up to date</li>
+            <li><i class="icons8-checkmark"></i> Follow artist to keep pup to date</li>
           </ul>
         </div>
       </div>

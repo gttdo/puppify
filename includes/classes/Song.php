@@ -15,8 +15,8 @@
       $this->id = $id;
 
       $query = mysqli_query($this->con, "SELECT * FROM songs WHERE id='$this->id'");
-      $this->mysquliData = mysqli_fetch_array($query);
-      $this->title = $this->mysqliData['tile'];
+      $this->mysqliData = mysqli_fetch_array($query);
+      $this->title = $this->mysqliData['title'];
       $this->artistId = $this->mysqliData['artist'];
       $this->albumId = $this->mysqliData['album'];
       $this->genre = $this->mysqliData['genre'];
@@ -44,7 +44,7 @@
       return $this->mysquliData;
     }
     public function getGenre(){
-      return $this->genre;
+      return $this->mysquliData;
     }
 
   }

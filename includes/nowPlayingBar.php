@@ -20,12 +20,47 @@ $jsonArray = json_encode($resultArray);
   });
 
   function setTrack(trackId, newPlaylist, play){
-    audioElement.setTrack("assets/music/bensound-extremeaction.mp3");
+    $.post("includes/handlers/ajax/getSongJson.php", { songId: trackId}, function(data){
+
+      var track = JSON.parse(data);
+
+      $(".trackName span").text(track.title);
+
+      $.post("includes/handlers/ajax/getArtistJson.php", { artistId: track.artist}, function(data){
+        var artist = JSON.parse(data);
+        $(".artistName span ").text(artist.name);
+      });
+
+      $.post("includes/handlers/ajax/getAlbumJson.php", { albumId: track.album}, function(data){
+        var album = JSON.parse(data);
+        $(".albumLink img").attr("src", album.artworkPath);
+      });
+
+      audioElement.setTrack(track);
+      playSong();
+    });
 
     if(play){
-      audioElement.audio.play();
+      audioElement.play();
     }
 
+  }
+
+  function playSong(){
+
+    if(audioElement.audio.currentTime == 0){
+      $.post("includes/handlers/ajax/updatePlays.php", {songId: audioElement.currentlyPlaying.id });
+    }
+
+    $(".controlButton.play").hide();
+    $(".controlButton.pause").show();
+    audioElement.play();
+  }
+
+  function pauseSong(){
+    $(".controlButton.play").show();
+    $(".controlButton.pause").hide();
+    audioElement.pause();
   }
 </script>
 
@@ -34,14 +69,14 @@ $jsonArray = json_encode($resultArray);
     <div id="nowPlayingLeft">
       <div class="content">
         <span class="albumLink">
-          <img src="https://images.unsplash.com/photo-1518587671104-999f3dd2d340?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="" class="albumArtwork">
+          <img src="" alt="album link" class="albumArtwork">
         </span>
         <div class="trackInfo">
           <span class="trackName">
-            <span>Happy Dog</span>
+            <span></span>
           </span>
           <span class="artistName">
-            <span>The Boxers</span>
+            <span></span>
           </span>
         </div>
       </div>
@@ -58,10 +93,10 @@ $jsonArray = json_encode($resultArray);
           <button class="controlButton previous" title="previous button">
             <img src="assets/images/icons/previous.png" alt="previous">
           </button>
-          <button class="controlButton play" title="play button">
+          <button class="controlButton play" title="play button" onclick="playSong()">
             <img src="assets/images/icons/play.png" alt="play">
           </button>
-          <button class="controlButton pause" title="pause button" style="display: none;">
+          <button class="controlButton pause" title="pause button" style="display: none;" onclick="pauseSong()">
             <img src="assets/images/icons/pause.png" alt="pause">
           </button>
           <button class="controlButton next" title="next button">

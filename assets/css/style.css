@@ -436,3 +436,12 @@ body{
   display: block;
   margin: 0 auto 20px auto;
 }
+
+.playListsContainer {
+  padding: 10px 0;
+}
+
+.playlistImage {
+  border: 3px solid #282828;
+  padding: 10px;
+}
